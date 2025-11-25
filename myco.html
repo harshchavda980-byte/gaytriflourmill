@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>MyCo — CoreHRX</title><meta name="description" content="MyCo HRMS" />
+<style>
+/* same theme */
+:root{--bg:#071028;--panel:#0e1930;--glow:#4fd1ff;--accent:#6fc3ff;--muted:#99a6b3}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,#051227,#071028);color:#eaf3fb}
+a{color:var(--glow)}
+/* header */
+header{position:fixed;left:0;right:0;top:0;padding:14px 24px;z-index:999;transition:background .28s}
+header.solid{background:linear-gradient(180deg, rgba(6,10,18,0.86), rgba(6,10,18,0.86));backdrop-filter:blur(6px)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.brand img{width:64px}
+.nav{display:flex;gap:10px;align-items:center}
+.dropdown{position:relative}.menu{position:absolute;top:100%;left:0;min-width:200px;padding:8px;border-radius:12px;background:linear-gradient(180deg, rgba(10,16,30,0.85), rgba(8,12,24,0.75));backdrop-filter:blur(10px);display:none}
+.dropdown:hover .menu,.dropdown.open .menu{display:block}.menu a{display:block;padding:10px 14px;color:#eaf3fb}
+.center{padding:120px 20px 60px;max-width:1100px;margin:0 auto}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:12px}
+footer{padding:36px 24px;text-align:center;color:var(--muted)}
+.fade-up{opacity:0;transform:translateY(10px);transition:all .6s}
+.fade-up.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<header id="site-header">
+  <div class="nav-inner">
+    <div style="display:flex;align-items:center;gap:12px"><img src="/mnt/data/A_digital_vector_graphic_features_the_logo_of_Core.png" alt="logo" style="width:64px"><div style="font-weight:700">CoreHRX</div></div>
+    <nav class="nav"><a href="index.html">Home</a><div class="dropdown" data-dd><button class="trigger">Products ▾</button><div class="menu"><a href="myco.html">MyCo</a><a href="crm.html">CRM</a></div></div><a href="services.html">Services</a><a href="contact.html">Contact</a><a class="cta" href="contact.html" style="background:linear-gradient(90deg,var(--glow),var(--accent));color:#041025;padding:9px 12px;border-radius:8px">Request Demo</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="center fade-up">
+    <h1>MyCo — HRMS & Payroll</h1>
+    <p style="color:var(--muted)">All-in-one HRMS for attendance, payroll, onboarding and employee self-service.</p>
+    <div class="card" style="margin-top:18px">
+      <h3>Main features</h3>
+      <ul style="color:var(--muted)"><li>Attendance: QR, GPS, Biometric</li><li>Payroll automation: PF/ESI/TDS</li><li>Onboarding & digital docs</li><li>Employee self-service</li></ul>
+    </div>
+  </section>
+
+  <footer><div style="max-width:1100px;margin:24px auto;padding:16px;color:var(--muted);text-align:center">© CoreHRX • Ahmedabad</div></footer>
+</main>
+
+<script>
+const header=document.getElementById('site-header');window.addEventListener('scroll',()=>header.classList.toggle('solid',window.scrollY>18));
+document.querySelectorAll('.fade-up').forEach((el,i)=>setTimeout(()=>el.classList.add('visible'),180+i*80));
+const isTouch=('ontouchstart' in window)||navigator.maxTouchPoints>0;document.querySelectorAll('[data-dd]').forEach(dd=>{const btn=dd.querySelector('.trigger'); if(!btn) return; btn.setAttribute('aria-expanded','false'); if(isTouch){btn.addEventListener('click',e=>{e.preventDefault(); dd.classList.toggle('open'); btn.setAttribute('aria-expanded', dd.classList.contains('open'));});}});
+document.addEventListener('click',e=>{ if(!e.target.closest('[data-dd]')) document.querySelectorAll('[data-dd].open').forEach(d=>d.classList.remove('open'));});
+</script>
+</body></html>
