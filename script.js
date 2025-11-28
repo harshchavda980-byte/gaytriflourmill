@@ -1,0 +1,1 @@
+console.log('CoreHRX site loaded');
