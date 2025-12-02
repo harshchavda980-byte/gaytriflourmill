@@ -32,3 +32,139 @@
             left: 0;
             z-index: 999;
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .navbar img {
+            height: 65px;
+            width: auto;
+            animation: logoFloat 3s ease-in-out infinite;
+        }
+
+        /* LOGO floating animation */
+        @keyframes logoFloat {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 0 20px;
+            margin-top: 90px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            animation: fadeIn 1.2s ease forwards;
+            opacity: 0;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-top: 15px;
+            max-width: 650px;
+            line-height: 1.6;
+            animation: slideDown 1.4s ease forwards;
+            opacity: 0;
+        }
+
+        /* BUTTON */
+        .btn-primary {
+            margin-top: 30px;
+            padding: 14px 32px;
+            background: #1D3C70;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #28C6F5;
+            color: #1D3C70;
+            box-shadow: 0 0 15px rgba(40,198,245,0.6);
+        }
+
+        /* FEATURES GRID */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            padding: 60px 50px;
+        }
+
+        .feature-box {
+            background: #fff;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            transition: 0.4s;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(29,60,112,0.25);
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-20px); }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <img src="logo.png" alt="Mine HR Logo">
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Mine HR Solutions Pvt. Ltd.</h1>
+        <p>Your trusted partner for professional HR services, recruitment assistance, payroll support, and complete business growth solutions.</p>
+
+        <button class="btn-primary">Explore Services</button>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features">
+        <div class="feature-box">
+            <h3>Recruitment Services</h3>
+            <p>Find the perfect candidates for your company with our expert hiring solutions.</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>Payroll Management</h3>
+            <p>Reliable payroll solutions tailored for all business sizes.</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>HR Outsourcing</h3>
+            <p>Full HR operations handled by our experienced professionals.</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>Business Solutions</h3>
+            <p>Consulting & strategic support to grow your business faster.</p>
+        </div>
+    </section>
+
+</body>
+</html>
