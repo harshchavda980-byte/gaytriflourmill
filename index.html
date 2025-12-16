@@ -145,6 +145,17 @@
     </div>
   </div>
 </footer>
+<script>
+  const menuBtn = document.querySelector(".menu-btn");
+  const navLinks = document.querySelector(".nav-links");
 
+  menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    menuBtn.setAttribute(
+      "aria-expanded",
+      navLinks.classList.contains("active")
+    );
+  });
+</script>
 </body>
 </html>
