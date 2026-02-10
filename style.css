@@ -35,7 +35,18 @@ body {
   border-radius: 4px;
   border: none;
 }
+.logo img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
 
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .logo img {
+    height: 40px;
+  }
+}
 /* HERO */
 .hero {
   height: 90vh;
