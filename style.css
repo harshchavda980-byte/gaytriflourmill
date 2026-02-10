@@ -173,3 +173,9 @@ footer {
     gap: 10px;
   }
 }
+
+.footer-logo img {
+  height: 45px;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
