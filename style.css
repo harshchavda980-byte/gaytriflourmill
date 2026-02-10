@@ -47,6 +47,17 @@ body {
     height: 40px;
   }
 }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand span {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
 /* HERO */
 .hero {
   height: 90vh;
