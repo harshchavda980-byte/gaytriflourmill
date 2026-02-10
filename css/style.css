@@ -47,3 +47,9 @@ footer {
   text-align: center;
   padding: 15px;
 }
+#languageSwitcher {
+  padding: 6px;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+}
