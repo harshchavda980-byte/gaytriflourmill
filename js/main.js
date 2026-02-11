@@ -64,13 +64,41 @@ window.onload = () => {
   changeLanguage();
 };
 
-/* Scroll animation */
+/* SCROLL FADE ANIMATION */
 const fadeElements = document.querySelectorAll(".fade-up");
-window.addEventListener("scroll", () => {
+
+function revealOnScroll() {
   fadeElements.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
+    const position = el.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if (position < screenHeight - 100) {
       el.classList.add("show");
     }
+  });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+
+
+/* ACTIVE NAV LINK */
+const navLinks = document.querySelectorAll("nav a");
+const currentPage = window.location.pathname.split("/").pop();
+
+navLinks.forEach(link => {
+  if (link.getAttribute("href") === currentPage) {
+    link.style.borderBottom = "2px solid #ffd700";
+  }
+});
+
+
+/* SMOOTH SCROLL (optional future use) */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth"
+    });
   });
 });
