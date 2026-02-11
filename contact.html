@@ -1,63 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Contact Us | Gaytri Flour Mill</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - Gaytri Flour Mill</title>
+<link rel="stylesheet" href="css/style.css">
+<script defer src="js/script.js"></script>
 </head>
 <body>
 
-<header class="header">
-  <div class="brand">
-    <img src="images/logo.png" alt="Gaytri Flour Mill">
-    <span>Gaytri Flour Mill</span>
-  </div>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="products.html">Products</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html" class="nav-cta">Contact</a>
-  </nav>
+<header>
+<nav>
+<div class="logo">Gaytri Flour Mill</div>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="products.html">Products</a></li>
+<li><a href="infrastructure.html">Infrastructure</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
 </header>
 
-<section class="content">
-  <h2>Contact Us</h2>
+<section class="section">
+<h2>Contact Us</h2>
 
-  <p>📞 Phone: +91 XXXXXXXXXX</p>
-  <p>📍 Location: Your Village / City Name</p>
+<p><strong>Address:</strong> Limbdi, Surendranagar, Gujarat, India</p>
+<p><strong>Phone:</strong> +91-XXXXXXXXXX</p>
+<p><strong>Email:</strong> info@gaytriflourmill.com</p>
 
-  <a class="btn" 
-     href="https://wa.me/91XXXXXXXXXX" 
-     target="_blank">
-     WhatsApp Us
-  </a>
+<form name="contactForm" onsubmit="return validateForm()">
+<input type="text" name="name" placeholder="Your Name">
+<input type="email" name="email" placeholder="Your Email">
+<textarea name="message" rows="5" placeholder="Your Message"></textarea>
+<input type="submit" value="Send Message">
+</form>
 
-  <iframe 
-    src="https://www.google.com/maps?q=your-location&output=embed"
-    width="100%" height="300">
-  </iframe>
+<br>
+
+<iframe 
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1dplaceholder"
+width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+</iframe>
+
 </section>
 
-<footer class="footer">
-  <div class="footer-top">
-    <img src="images/logo.png" alt="Gaytri Flour Mill">
-    <p>
-      Trusted local salt supplier providing quality products and reliable
-      delivery across nearby regions.
-    </p>
-  </div>
-
-  <div class="footer-links">
-    <a href="about.html">About</a>
-    <a href="products.html">Products</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
-  </div>
-
-  <p class="copyright">
-    © 2026 Gaytri Flour Mill. All Rights Reserved.
-  </p>
+<footer>
+© 2026 Gaytri Flour Mill & Salt Suppliers
 </footer>
 
 </body>
