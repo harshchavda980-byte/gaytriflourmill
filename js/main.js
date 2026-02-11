@@ -1,3 +1,24 @@
+// Language Toggle
+let currentLang = "en";
+
+function toggleLanguage() {
+    const elements = document.querySelectorAll("[data-en]");
+    
+    elements.forEach(el => {
+        if(currentLang === "en"){
+            el.textContent = el.getAttribute("data-gu");
+        } else {
+            el.textContent = el.getAttribute("data-en");
+        }
+    });
+
+    currentLang = currentLang === "en" ? "gu" : "en";
+}
+
+// Mobile Menu Toggle
+function toggleMenu(){
+    document.querySelector("nav ul").classList.toggle("active");
+}
 const languageData = {
   en: {
     heroTitle: "Trusted Salt Supplier in Nearby Areas",
