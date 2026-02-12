@@ -64,6 +64,11 @@ nav {
   align-items: center;
 }
 
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
 nav .logo {
   font-size: 20px;
   font-weight: bold;
