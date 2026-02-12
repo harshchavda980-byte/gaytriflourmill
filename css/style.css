@@ -116,6 +116,13 @@ nav ul li a:hover {
   margin-bottom: 20px;
 }
 
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
 .btn {
   padding: 10px 25px;
   background: var(--primary);
