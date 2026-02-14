@@ -94,6 +94,12 @@ nav ul li a:hover {
   color: var(--primary);
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
 /* Hero */
 .hero {
   height: 90vh;
@@ -216,6 +222,10 @@ input[type="submit"]:hover {
   }
   .hero h1 {
     font-size: 28px;
+  }
+}
+ .menu-toggle {
+    display: block;
   }
 }
 
