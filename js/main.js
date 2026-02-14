@@ -36,3 +36,6 @@ function validateForm() {
   alert("Form submitted successfully!");
   return true;
 }
+function toggleMenu(){
+  document.querySelector("nav ul").classList.toggle("active");
+}
