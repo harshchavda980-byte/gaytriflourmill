@@ -1,65 +1,89 @@
 let cart = [];
 
-function toggleMenu(){
-  document.getElementById("nav-links").classList.toggle("active");
+function addToCart(name, price, qtyId) {
+    let quantity = parseInt(document.getElementById(qtyId).value);
+
+    let existing = cart.find(item => item.name === name);
+
+    if (existing) {
+        existing.quantity += quantity;
+    } else {
+        cart.push({ name, price, quantity });
+    }
+
+    updateCart();
 }
 
-function addToCart(name, price){
-  cart.push({name, price});
-  updateCart();
+function removeItem(index) {
+    cart.splice(index, 1);
+    updateCart();
 }
 
-function updateCart(){
-  const cartItems = document.getElementById("cart-items");
-  const cartTotal = document.getElementById("cart-total");
+function updateCart() {
+    let cartItems = document.getElementById("cart-items");
+    let total = 0;
+    cartItems.innerHTML = "";
 
-  cartItems.innerHTML = "";
-  let total = 0;
+    cart.forEach((item, index) => {
+        let itemTotal = item.price * item.quantity;
+        total += itemTotal;
 
-  cart.forEach(item=>{
-    total += item.price;
-    cartItems.innerHTML += `<p>${item.name} - ₹${item.price}</p>`;
-  });
+        cartItems.innerHTML += `
+            <div>
+                ${item.name} (${item.quantity}kg) - ₹${itemTotal}
+                <button onclick="removeItem(${index})">❌</button>
+            </div>
+        `;
+    });
 
-  cartTotal.innerText = total;
+    document.getElementById("cart-total").innerText = total;
 }
 
-function generateInvoice(e){
-  e.preventDefault();
+function generateInvoice(e) {
+    e.preventDefault();
 
-  const { jsPDF } = window.jspdf;
-  const doc = new jsPDF();
+    if (cart.length === 0) {
+        alert("Cart is empty!");
+        return;
+    }
 
-  let y = 20;
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
 
-  doc.setFontSize(16);
-  doc.text("Gaytri Flour Mill & Salt Suppliers", 20, y);
-  y += 10;
+    let y = 20;
 
-  doc.setFontSize(12);
-  doc.text("Customer Details:", 20, y);
-  y += 8;
+    doc.setFontSize(16);
+    doc.text("Gaytri Flour Mill & Salt Suppliers", 20, y);
+    y += 10;
 
-  doc.text("Name: " + document.getElementById("customerName").value, 20, y);
-  y += 8;
-  doc.text("Phone: " + document.getElementById("customerPhone").value, 20, y);
-  y += 8;
-  doc.text("Address: " + document.getElementById("customerAddress").value, 20, y);
-  y += 10;
-
-  doc.text("Order Summary:", 20, y);
-  y += 8;
-
-  let total = 0;
-
-  cart.forEach(item=>{
-    doc.text(item.name + " - ₹" + item.price, 20, y);
-    total += item.price;
+    doc.setFontSize(12);
+    doc.text("Customer Name: " + document.getElementById("customerName").value, 20, y);
     y += 8;
-  });
 
-  y += 5;
-  doc.text("Total Amount: ₹" + total, 20, y);
+    doc.text("Phone: " + document.getElementById("customerPhone").value, 20, y);
+    y += 8;
 
-  doc.save("Order_Invoice.pdf");
+    doc.text("Address: " + document.getElementById("customerAddress").value, 20, y);
+    y += 12;
+
+    doc.text("Order Details:", 20, y);
+    y += 8;
+
+    let total = 0;
+
+    cart.forEach(item => {
+        let itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        doc.text(`${item.name} - ${item.quantity}kg - ₹${itemTotal}`, 20, y);
+        y += 8;
+    });
+
+    y += 5;
+    doc.text("Total Amount: ₹" + total, 20, y);
+
+    doc.save("Gaytri_Order_Invoice.pdf");
+
+    cart = [];
+    updateCart();
 }
