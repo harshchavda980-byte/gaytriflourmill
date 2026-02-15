@@ -277,3 +277,20 @@ input[type="submit"]:hover {
     flex-direction: column;
   }
 }
+button {
+  padding: 8px 15px;
+  background: #d4a017;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+button:hover {
+  background: #b8860b;
+}
+
+#cart-items p {
+  margin: 5px 0;
+}
