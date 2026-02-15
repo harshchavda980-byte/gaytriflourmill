@@ -4,9 +4,85 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Products - Gaytri Flour Mill & Salt Suppliers</title>
+
 <link rel="stylesheet" href="css/style.css">
+
 <script defer src="js/products.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+
+/* PRODUCT GRID */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card button {
+  background: #d4a017;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.card button:hover {
+  background: #b89014;
+}
+
+/* CART */
+#cart-items div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+  background: green;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background: darkgreen;
+}
+
+</style>
 </head>
 
 <body>
@@ -14,7 +90,7 @@
 <header>
 <nav>
   <div class="logo">
-    <img src="images/logo.png" alt="Logo">
+    <img src="images/logo.png" alt="Logo" height="50">
   </div>
 
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -38,42 +114,48 @@
   <img src="images/atta.jpg">
   <h3>Wheat Flour (Atta)</h3>
   <p>₹40 / kg</p>
-  <button onclick="addToCart('Wheat Flour',40)">Add to Cart</button>
+  <input type="number" id="qty1" min="1" value="1">
+  <button onclick="addToCart('Wheat Flour',40,'qty1')">Add to Cart</button>
 </div>
 
 <div class="card">
   <img src="images/maida.jpg">
   <h3>Maida</h3>
   <p>₹38 / kg</p>
-  <button onclick="addToCart('Maida',38)">Add to Cart</button>
+  <input type="number" id="qty2" min="1" value="1">
+  <button onclick="addToCart('Maida',38,'qty2')">Add to Cart</button>
 </div>
 
 <div class="card">
   <img src="images/suji.jpg">
   <h3>Suji / Rava</h3>
   <p>₹42 / kg</p>
-  <button onclick="addToCart('Suji',42)">Add to Cart</button>
+  <input type="number" id="qty3" min="1" value="1">
+  <button onclick="addToCart('Suji',42,'qty3')">Add to Cart</button>
 </div>
 
 <div class="card">
   <img src="images/salt.jpg">
   <h3>Industrial Salt</h3>
   <p>₹15 / kg</p>
-  <button onclick="addToCart('Industrial Salt',15)">Add to Cart</button>
+  <input type="number" id="qty4" min="1" value="1">
+  <button onclick="addToCart('Industrial Salt',15,'qty4')">Add to Cart</button>
 </div>
 
 <div class="card">
   <img src="images/multigrain.jpg">
   <h3>Multigrain Flour</h3>
   <p>₹55 / kg</p>
-  <button onclick="addToCart('Multigrain Flour',55)">Add to Cart</button>
+  <input type="number" id="qty5" min="1" value="1">
+  <button onclick="addToCart('Multigrain Flour',55,'qty5')">Add to Cart</button>
 </div>
 
 <div class="card">
   <img src="images/besan.jpg">
   <h3>Besan (Gram Flour)</h3>
   <p>₹60 / kg</p>
-  <button onclick="addToCart('Besan',60)">Add to Cart</button>
+  <input type="number" id="qty6" min="1" value="1">
+  <button onclick="addToCart('Besan',60,'qty6')">Add to Cart</button>
 </div>
 
 </div>
@@ -98,12 +180,11 @@
 
 <h3>Payment Information</h3>
 
-<p><strong>UPI ID:</strong> yourupi@bank</p>
-<p><strong>Bank Name:</strong> Your Bank Name</p>
+<p><strong>UPI ID:</strong> gaytriflour@upi</p>
+<p><strong>Bank Name:</strong> State Bank of India</p>
 <p><strong>Account No:</strong> XXXXXXXX</p>
-<p><strong>IFSC Code:</strong> XXXXXXXX</p>
+<p><strong>IFSC Code:</strong> SBIN000XXXX</p>
 
-<br>
 <button type="submit">Generate Order Invoice (PDF)</button>
 
 </form>
