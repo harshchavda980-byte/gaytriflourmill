@@ -4,6 +4,9 @@ window.addEventListener("load", function(){
   document.getElementById("loader").style.display = "none";
 });
 
+function toggleMenu() {
+    document.querySelector(".nav-links").classList.toggle("show");
+}
 // Counter Animation
 const counters = document.querySelectorAll('.counter');
 counters.forEach(counter => {
