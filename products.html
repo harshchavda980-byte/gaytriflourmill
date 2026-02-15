@@ -6,13 +6,12 @@
 <title>Products - Gaytri Flour Mill & Salt Suppliers</title>
 
 <link rel="stylesheet" href="css/style.css">
-
 <script defer src="js/products.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <style>
 
-/* PRODUCT GRID */
+/* SAME STYLE AS INDEX PAGE */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -23,14 +22,14 @@
 .card {
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   padding: 20px;
   text-align: center;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
 }
 
 .card img {
@@ -40,31 +39,49 @@
   border-radius: 8px;
 }
 
+.card h3 {
+  margin: 10px 0 5px;
+}
+
+.card p {
+  font-weight: bold;
+  color: #d4a017;
+}
+
+.card input {
+  width: 60px;
+  padding: 5px;
+  margin: 8px 0;
+  text-align: center;
+}
+
 .card button {
   background: #d4a017;
   color: white;
   border: none;
-  padding: 10px 15px;
-  border-radius: 6px;
+  padding: 8px 14px;
+  border-radius: 5px;
   cursor: pointer;
-  margin-top: 10px;
 }
 
 .card button:hover {
   background: #b89014;
 }
 
-/* CART */
+.section {
+  padding: 40px 20px;
+}
+
 #cart-items div {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 input, textarea {
   width: 100%;
   padding: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   border-radius: 5px;
   border: 1px solid #ccc;
 }
@@ -72,9 +89,9 @@ input, textarea {
 button[type="submit"] {
   background: green;
   color: white;
-  padding: 12px;
+  padding: 10px;
   border: none;
-  border-radius: 6px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -110,83 +127,154 @@ button[type="submit"]:hover {
 
 <div class="cards">
 
+<!-- 1 -->
 <div class="card">
-  <img src="images/atta.jpg">
-  <h3>Wheat Flour (Atta)</h3>
-  <p>₹40 / kg</p>
-  <input type="number" id="qty1" min="1" value="1">
-  <button onclick="addToCart('Wheat Flour',40,'qty1')">Add to Cart</button>
+<img src="images/atta.jpg">
+<h3>Wheat Flour (Atta)</h3>
+<p>₹40 / kg</p>
+<input type="number" id="q1" value="1" min="1">
+<button onclick="addToCart('Wheat Flour',40,'q1')">Add to Cart</button>
 </div>
 
+<!-- 2 -->
 <div class="card">
-  <img src="images/maida.jpg">
-  <h3>Maida</h3>
-  <p>₹38 / kg</p>
-  <input type="number" id="qty2" min="1" value="1">
-  <button onclick="addToCart('Maida',38,'qty2')">Add to Cart</button>
+<img src="images/maida.jpg">
+<h3>Maida</h3>
+<p>₹38 / kg</p>
+<input type="number" id="q2" value="1" min="1">
+<button onclick="addToCart('Maida',38,'q2')">Add to Cart</button>
 </div>
 
+<!-- 3 -->
 <div class="card">
-  <img src="images/suji.jpg">
-  <h3>Suji / Rava</h3>
-  <p>₹42 / kg</p>
-  <input type="number" id="qty3" min="1" value="1">
-  <button onclick="addToCart('Suji',42,'qty3')">Add to Cart</button>
+<img src="images/suji.jpg">
+<h3>Suji / Rava</h3>
+<p>₹42 / kg</p>
+<input type="number" id="q3" value="1" min="1">
+<button onclick="addToCart('Suji',42,'q3')">Add to Cart</button>
 </div>
 
+<!-- 4 -->
 <div class="card">
-  <img src="images/salt.jpg">
-  <h3>Industrial Salt</h3>
-  <p>₹15 / kg</p>
-  <input type="number" id="qty4" min="1" value="1">
-  <button onclick="addToCart('Industrial Salt',15,'qty4')">Add to Cart</button>
+<img src="images/salt.jpg">
+<h3>Industrial Salt</h3>
+<p>₹15 / kg</p>
+<input type="number" id="q4" value="1" min="1">
+<button onclick="addToCart('Industrial Salt',15,'q4')">Add to Cart</button>
 </div>
 
+<!-- 5 -->
 <div class="card">
-  <img src="images/multigrain.jpg">
-  <h3>Multigrain Flour</h3>
-  <p>₹55 / kg</p>
-  <input type="number" id="qty5" min="1" value="1">
-  <button onclick="addToCart('Multigrain Flour',55,'qty5')">Add to Cart</button>
+<img src="images/multigrain.jpg">
+<h3>Multigrain Flour</h3>
+<p>₹55 / kg</p>
+<input type="number" id="q5" value="1" min="1">
+<button onclick="addToCart('Multigrain Flour',55,'q5')">Add to Cart</button>
 </div>
 
+<!-- 6 -->
 <div class="card">
-  <img src="images/besan.jpg">
-  <h3>Besan (Gram Flour)</h3>
-  <p>₹60 / kg</p>
-  <input type="number" id="qty6" min="1" value="1">
-  <button onclick="addToCart('Besan',60,'qty6')">Add to Cart</button>
+<img src="images/besan.jpg">
+<h3>Besan (Gram Flour)</h3>
+<p>₹60 / kg</p>
+<input type="number" id="q6" value="1" min="1">
+<button onclick="addToCart('Besan',60,'q6')">Add to Cart</button>
 </div>
 
+<!-- 7 -->
+<div class="card">
+<img src="images/jowar.jpg">
+<h3>Jowar Flour</h3>
+<p>₹50 / kg</p>
+<input type="number" id="q7" value="1" min="1">
+<button onclick="addToCart('Jowar Flour',50,'q7')">Add to Cart</button>
+</div>
+
+<!-- 8 -->
+<div class="card">
+<img src="images/bajra.jpg">
+<h3>Bajra Flour</h3>
+<p>₹48 / kg</p>
+<input type="number" id="q8" value="1" min="1">
+<button onclick="addToCart('Bajra Flour',48,'q8')">Add to Cart</button>
+</div>
+
+<!-- 9 -->
+<div class="card">
+<img src="images/cornflour.jpg">
+<h3>Corn Flour</h3>
+<p>₹45 / kg</p>
+<input type="number" id="q9" value="1" min="1">
+<button onclick="addToCart('Corn Flour',45,'q9')">Add to Cart</button>
+</div>
+
+  <!-- 10 -->
+<div class="card">
+<img src="images/blacksalt.jpg">
+<h3>Black Salt</h3>
+<p>₹60 / kg</p>
+<input type="number" id="q8" value="1" min="1">
+<button onclick="addToCart('Black Salt',48,'q8')">Add to Cart</button>
+</div>
+
+  <!-- 11 -->
+<div class="card">
+<img src="images/gaytrisalt.jpg">
+<h3>Gaytri Salt</h3>
+<p>₹35 / kg</p>
+<input type="number" id="q8" value="1" min="1">
+<button onclick="addToCart('Gaytri Salt',48,'q8')">Add to Cart</button>
+</div>
+
+  <!-- 12 -->
+<div class="card">
+<img src="images/rocksalt.jpg">
+<h3>Rock Salt</h3>
+<p>₹25 / kg</p>
+<input type="number" id="q8" value="1" min="1">
+<button onclick="addToCart('Rock Salt',48,'q8')">Add to Cart</button>
+</div>
+
+<!-- 13 -->
+<div class="card">
+<img src="images/saltlite.jpg">
+<h3>Salt Lite</h3>
+<p>₹20 / kg</p>
+<input type="number" id="q8" value="1" min="1">
+<button onclick="addToCart('Salt Lite',48,'q8')">Add to Cart</button>
+</div>
+
+<!-- 14 -->
+<div class="card">
+<img src="images/superlitewhite.jpg">
+<h3>Super Lite White Salt</h3>
+<p>₹65 / kg</p>
+<input type="number" id="q8" value="1" min="1">
+<button onclick="addToCart('Super Lite White Salt',48,'q8')">Add to Cart</button>
+</div>
+  
 </div>
 </section>
 
 <section class="section" style="background:#f9f9f9;">
 <h2>Cart Summary</h2>
-
 <div id="cart-items"></div>
 <h3>Total: ₹ <span id="cart-total">0</span></h3>
-
 </section>
 
 <section class="section">
 <h2>Checkout</h2>
 
 <form onsubmit="generateInvoice(event)">
-
 <input type="text" id="customerName" placeholder="Customer Name" required>
 <input type="text" id="customerPhone" placeholder="Phone Number" required>
 <textarea id="customerAddress" placeholder="Delivery Address" required></textarea>
 
 <h3>Payment Information</h3>
+<p><strong>UPI:</strong> gaytriflour@upi</p>
+<p><strong>Bank:</strong> State Bank of India</p>
 
-<p><strong>UPI ID:</strong> gaytriflour@upi</p>
-<p><strong>Bank Name:</strong> State Bank of India</p>
-<p><strong>Account No:</strong> XXXXXXXX</p>
-<p><strong>IFSC Code:</strong> SBIN000XXXX</p>
-
-<button type="submit">Generate Order Invoice (PDF)</button>
-
+<button type="submit">Generate Invoice (PDF)</button>
 </form>
 
 </section>
