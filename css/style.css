@@ -149,9 +149,18 @@ nav ul li a:hover {
   text-align: center;
 }
 
+.section p {
+  line-height: 1.7;
+  color: #444;
+}
+
 .section h2 {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   color: var(--primary);
+}
+
+.card h3 {
+  margin-bottom: 10px;
 }
 
 .cards {
