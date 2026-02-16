@@ -269,6 +269,17 @@ body {
     margin-bottom: 25px;
 }
 
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 12px 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  text-decoration: none;
+}
 /* ===============================
    FOOTER
 ================================= */
@@ -334,3 +345,4 @@ body {
         height: 45px;
     }
 }
+
