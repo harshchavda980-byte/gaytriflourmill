@@ -1,18 +1,99 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Infrastructure - Gaytri Flour Mill</title>
 <link rel="stylesheet" href="css/style.css">
+
+<style>
+
+/* HERO SECTION */
+.hero-infra {
+  background: url('images/factory.jpg') center/cover no-repeat;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+}
+
+.hero-infra::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  top: 0;
+  left: 0;
+}
+
+.hero-infra h1 {
+  position: relative;
+  font-size: 40px;
+  z-index: 2;
+}
+
+/* SECTION STYLE */
+.section {
+  padding: 60px 20px;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* GRID CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 30px;
+}
+
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: #d4a017;
+}
+
+/* IMAGE SECTION */
+.image-section img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero-infra h1 {
+    font-size: 28px;
+    text-align: center;
+    padding: 0 15px;
+  }
+}
+
+</style>
 </head>
+
 <body>
 
 <!-- ================= Header ================= -->
 <header class="header">
   <nav class="navbar">
-    
     <div class="logo">
       <img src="images/logo.png" alt="Gaytri Flour Mill Logo">
       <span>Gaytri Flour Mill</span>
@@ -21,30 +102,116 @@
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
     <ul class="nav-links">
-      <li><a href="index.html" >Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="products.html">Products</a></li>
       <li><a href="infrastructure.html" class="active">Infrastructure</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-
   </nav>
 </header>
 
+<!-- ================= HERO ================= -->
+<section class="hero-infra">
+  <h1>Our Infrastructure & Milling Process</h1>
+</section>
+
+<!-- ================= INTRO ================= -->
 <section class="section">
-  <h2>Infrastructure & Process</h2>
+  <h2>Modern Milling Infrastructure</h2>
+  <p style="text-align:center; max-width:900px; margin:auto;">
+    At Gaytri Flour Mill & Salt Suppliers, we operate with advanced milling
+    technology and automated processing systems to ensure premium quality flour.
+    Our facility is designed to maintain hygiene, efficiency, and high production
+    capacity while delivering consistent results to our customers.
+  </p>
+</section>
 
-  <img src="images/factory.jpg" alt="Factory Infrastructure" style="width:100%; max-width:900px; margin-bottom:20px;">
+<!-- ================= PROCESS ================= -->
+<section class="section" style="background:#f9f9f9;">
+  <h2>Our Production Process</h2>
 
-  <p>
-    We use modern milling technology and quality control processes...
+  <div class="grid">
+
+    <div class="card">
+      <h3>1. Raw Material Selection</h3>
+      <p>
+        We carefully select high-quality wheat and grains from trusted farmers
+        to ensure superior flour production.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>2. Cleaning & Sorting</h3>
+      <p>
+        Advanced cleaning machines remove dust, stones, and impurities before milling.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>3. Grinding & Milling</h3>
+      <p>
+        Modern roller mills grind grains evenly to maintain texture,
+        nutrition, and purity.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>4. Quality Testing</h3>
+      <p>
+        Every batch undergoes strict quality control checks to maintain
+        consistency and safety standards.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>5. Packaging</h3>
+      <p>
+        Hygienic packaging ensures freshness and safe delivery
+        to retailers and wholesalers.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= MACHINERY ================= -->
+<section class="section">
+  <h2>Advanced Machinery</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Automatic Roller Mills</h3>
+      <p>High-performance milling systems for consistent flour texture.</p>
+    </div>
+
+    <div class="card">
+      <h3>Cleaning & Grading Machines</h3>
+      <p>Ensuring impurity-free raw material processing.</p>
+    </div>
+
+    <div class="card">
+      <h3>Packaging Units</h3>
+      <p>Automated packaging for bulk and retail supply.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= QUALITY ================= -->
+<section class="section" style="background:#f9f9f9;">
+  <h2>Quality & Hygiene Standards</h2>
+  <p style="text-align:center; max-width:900px; margin:auto;">
+    We follow strict hygiene protocols and food safety standards to ensure
+    contamination-free production. Our infrastructure is designed to maintain
+    cleanliness, temperature control, and efficient workflow.
   </p>
 </section>
 
 <!-- ================= Footer ================= -->
 <footer class="footer">
   <div class="container footer-content">
-
     <div class="footer-logo">
       <img src="images/logo.png" alt="Gaytri Flour Mill Logo">
       <h3>Gaytri Flour Mill</h3>
@@ -55,7 +222,6 @@
       <p>Limbdi, Gujarat, India</p>
       <p>© 2026 Gaytri Flour Mill & Salt Suppliers. All Rights Reserved.</p>
     </div>
-
   </div>
 </footer>
 
