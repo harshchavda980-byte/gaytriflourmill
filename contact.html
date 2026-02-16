@@ -1,76 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Us - Gaytri Flour Mill</title>
-<link rel="stylesheet" href="css/style.css">
-<script defer src="js/script.js"></script>
+    <meta charset="UTF-8">
+    <title>Contact Us - Gaytri Flour Mill</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Same CSS as index -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome (if used in index) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
 
-<!-- ================= Header ================= -->
-<header class="header">
-  <nav class="navbar">
-    
-    <div class="logo">
-      <img src="images/logo.png" alt="Gaytri Flour Mill Logo">
-      <span>Gaytri Flour Mill</span>
-    </div>
-
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="products.html">Products</a></li>
-      <li><a href="infrastructure.html">Infrastructure</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
-    </ul>
-
-  </nav>
+<!-- ================= Header ================= --> <header class="header"> 
+  <nav class="navbar"> 
+    <div class="logo"> 
+      <img src="images/logo.png" alt="Gaytri Flour Mill Logo"> <span>Gaytri Flour Mill</span> 
+    </div> 
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div> 
+    <ul class="nav-links"> 
+      <li><a href="index.html" >Home</a></li> 
+      <li><a href="about.html">About</a></li> 
+      <li><a href="products.html">Products</a></li> 
+      <li><a href="infrastructure.html" >Infrastructure</a></li> 
+      <li><a href="contact.html" class="active">Contact</a></li> 
+    </ul> 
+  </nav> 
 </header>
 
-<section class="section">
-<h2>Contact Us</h2>
 
-<p><strong>Address:</strong> Limbdi, Surendranagar, Gujarat, India</p>
-<p><strong>Phone:</strong> +91-XXXXXXXXXX</p>
-<p><strong>Email:</strong> info@gaytriflourmill.com</p>
+<!-- ===== CONTACT SECTION ===== -->
+<section class="contact-section">
+    <h1>Contact Us</h1>
+    <p>We would love to hear from you. Reach out to us anytime!</p>
 
-<form name="contactForm" onsubmit="return validateForm()">
-<input type="text" name="name" placeholder="Your Name">
-<input type="email" name="email" placeholder="Your Email">
-<textarea name="message" rows="5" placeholder="Your Message"></textarea>
-<input type="submit" value="Send Message">
-</form>
+    <div class="contact-container">
 
-<br>
+        <div class="contact-info">
+            <h3>Our Details</h3>
+            <p><strong>Company:</strong> Gaytri Flour Mill</p>
+            <p><strong>Phone:</strong> +91 XXXXX XXXXX</p>
+            <p><strong>Email:</strong> info@gaytriflourmill.com</p>
+            <p><strong>Address:</strong> Your Full Address Here</p>
+        </div>
 
-<iframe 
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1dplaceholder"
-width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
-</iframe>
+        <div class="contact-form">
+            <h3>Send Message</h3>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="tel" placeholder="Phone Number">
+                <textarea rows="5" placeholder="Your Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
 
+    </div>
 </section>
 
-<!-- ================= Footer ================= -->
-<footer class="footer">
-  <div class="container footer-content">
 
-    <div class="footer-logo">
-      <img src="images/logo.png" alt="Gaytri Flour Mill Logo">
-      <h3>Gaytri Flour Mill</h3>
-    </div>
-
-    <div class="footer-info">
-      <p>Delivering Quality Flour & Salt with Trust and Purity</p>
-      <p>Limbdi, Gujarat, India</p>
-      <p>© 2026 Gaytri Flour Mill & Salt Suppliers. All Rights Reserved.</p>
-    </div>
-
-  </div>
-</footer>
+<!-- ================= Footer ================= --> 
+  <footer class="footer"> <div class="container footer-content"> 
+    <div class="footer-logo"> <img src="images/logo.png" alt="Gaytri Flour Mill Logo"> 
+      <h3>Gaytri Flour Mill</h3> </div> <div class="footer-info"> 
+        <p>Delivering Quality Flour & Salt with Trust and Purity</p> 
+        <p>Limbdi, Gujarat, India</p> <p>© 2026 Gaytri Flour Mill & Salt Suppliers. All Rights Reserved.</p> 
+      </div> 
+  </div> 
+  
+  </footer>
 
 </body>
 </html>
