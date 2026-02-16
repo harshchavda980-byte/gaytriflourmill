@@ -280,6 +280,29 @@ body {
   font-size: 20px;
   text-decoration: none;
 }
+
+/* Map Section */
+.map-section {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.map-section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
 /* ===============================
    FOOTER
 ================================= */
