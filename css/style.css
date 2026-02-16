@@ -83,6 +83,7 @@ body {
 
 .logo img {
     height: 45px;
+    width: auto;
 }
 
 .nav-links {
@@ -280,6 +281,7 @@ body {
 
 .footer-logo img {
     height: 50px;
+   width: auto;
     margin-bottom: 10px;
 }
 
@@ -321,5 +323,14 @@ body {
 
     .card img {
         height: 180px;
+    }
+}
+@media (max-width: 768px) {
+    .logo img {
+        height: 40px;
+    }
+
+    .footer-logo img {
+        height: 45px;
     }
 }
