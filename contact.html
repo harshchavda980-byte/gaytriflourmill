@@ -1,89 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Contact Us - Gaytri Flour Mill</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Gaytri Flour Mill</title>
+<link rel="stylesheet" href="css/style.css">
 
-    <!-- Same CSS as index -->
-    <link rel="stylesheet" href="css/style.css">
+<style>
 
-    <!-- Font Awesome (if used in index) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+/* ================= HERO ================= */
+.hero-contact {
+  background: url('images/contact-bg.jpg') center/cover no-repeat;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+}
+
+.hero-contact::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  top: 0;
+  left: 0;
+}
+
+.hero-contact h1 {
+  position: relative;
+  z-index: 2;
+  font-size: 38px;
+}
+
+/* ================= CONTACT SECTION ================= */
+.contact-section {
+  padding: 60px 20px;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  gap: 40px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* CARD STYLE */
+.contact-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.contact-card h3 {
+  margin-bottom: 15px;
+  color: #d4a017;
+}
+
+/* FORM STYLE */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #d4a017;
+}
+
+.contact-form button {
+  background: #d4a017;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #b89014;
+}
+
+/* ================= MAP ================= */
+.map-section {
+  margin-top: 50px;
+}
+
+.map-section iframe {
+  width: 100%;
+  height: 350px;
+  border: 0;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+  .hero-contact h1 {
+    font-size: 26px;
+    text-align: center;
+  }
+}
+
+</style>
 </head>
 
 <body>
 
-<!-- ================= Header ================= --> <header class="header"> 
-  <nav class="navbar"> 
-    <div class="logo"> 
-      <img src="images/logo.png" alt="Gaytri Flour Mill Logo"> <span>Gaytri Flour Mill</span> 
-    </div> 
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div> 
-    <ul class="nav-links"> 
-      <li><a href="index.html" >Home</a></li> 
-      <li><a href="about.html">About</a></li> 
-      <li><a href="products.html">Products</a></li> 
-      <li><a href="infrastructure.html" >Infrastructure</a></li> 
-      <li><a href="contact.html" class="active">Contact</a></li> 
-    </ul> 
-  </nav> 
+<!-- ================= Header ================= -->
+<header class="header">
+  <nav class="navbar">
+    <div class="logo">
+      <img src="images/logo.png" alt="Gaytri Flour Mill Logo" style="height:50px;">
+      <span>Gaytri Flour Mill</span>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="infrastructure.html">Infrastructure</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
+<!-- ================= HERO ================= -->
+<section class="hero-contact">
+  <h1>Get In Touch With Us</h1>
+</section>
 
-<!-- ===== CONTACT SECTION ===== -->
+<!-- ================= CONTACT ================= -->
 <section class="contact-section">
-    <h1>Contact Us</h1>
-    <p>We would love to hear from you. Reach out to us anytime!</p>
 
-    <div class="contact-container">
+  <div class="contact-container">
 
-        <div class="contact-info">
-            <h3>Our Details</h3>
-            <p><strong>Company:</strong> Gaytri Flour Mill</p>
-            <p><strong>Phone:</strong> +91 XXXXX XXXXX</p>
-            <p><strong>Email:</strong> info@gaytriflourmill.com</p>
-            <p><strong>Address:</strong> Your Full Address Here</p>
-        </div>
-
-        <div class="contact-form">
-            <h3>Send Message</h3>
-            <form>
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <input type="tel" placeholder="Phone Number">
-                <textarea rows="5" placeholder="Your Message"></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-
+    <!-- Contact Info -->
+    <div class="contact-card">
+      <h3>Contact Information</h3>
+      <p><strong>Company:</strong> Gaytri Flour Mill & Salt Suppliers</p>
+      <p><strong>Location:</strong> Limbdi, Gujarat, India</p>
+      <p><strong>Phone:</strong> +91 XXXXX XXXXX</p>
+      <p><strong>Email:</strong> info@gaytriflourmill.com</p>
+      <p><strong>Working Hours:</strong> Mon - Sat (9:00 AM - 7:00 PM)</p>
+      <br>
+      <p>We supply premium quality flour and industrial salt across Gujarat with trusted service and timely delivery.</p>
     </div>
-</section>
-    <section class="map-section">
-  <iframe 
-    src="https://www.google.com/maps/embed?pb=YOUR_MAP_LINK"
-    width="100%" 
-    height="300" 
-    style="border:0;" 
-    allowfullscreen="" 
-    loading="lazy">
-  </iframe>
-</section>
-    <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float" target="_blank">
-   💬
-</a>
 
+    <!-- Contact Form -->
+    <div class="contact-card contact-form">
+      <h3>Send Us a Message</h3>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="tel" placeholder="Phone Number">
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
 
-<!-- ================= Footer ================= --> 
-  <footer class="footer"> <div class="container footer-content"> 
-    <div class="footer-logo"> <img src="images/logo.png" alt="Gaytri Flour Mill Logo"> 
-      <h3>Gaytri Flour Mill</h3> </div> <div class="footer-info"> 
-        <p>Delivering Quality Flour & Salt with Trust and Purity</p> 
-        <p>Limbdi, Gujarat, India</p> <p>© 2026 Gaytri Flour Mill & Salt Suppliers. All Rights Reserved.</p> 
-      </div> 
-  </div> 
-  
-  </footer>
-<script defer src="js/main.js"></script>
+  </div>
+
+  <!-- Google Map -->
+  <div class="map-section">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=YOUR_MAP_LINK_HERE"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+  </div>
+
+</section>
+
+<!-- ================= Footer ================= -->
+<footer class="footer">
+  <div class="container footer-content">
+    <div class="footer-logo">
+      <img src="images/logo.png" alt="Gaytri Flour Mill Logo" style="height:50px;">
+      <h3>Gaytri Flour Mill</h3>
+    </div>
+
+    <div class="footer-info">
+      <p>Delivering Quality Flour & Salt with Trust and Purity</p>
+      <p>Limbdi, Gujarat, India</p>
+      <p>© 2026 Gaytri Flour Mill & Salt Suppliers. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
