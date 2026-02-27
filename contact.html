@@ -1,215 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact - Gaytri Flour Mill</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Gaytri Flour Mill</title>
+  <link rel="stylesheet" href="css/style.css">
 
-<style>
+  <style>
+    /* ================= HERO ================= */
+    .hero-contact {
+      background: url('images/contact-bg.jpg') center/cover no-repeat;
+      height: 650px;
+      width: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      color: white;
+    }
 
-/* ================= HERO ================= */
-.hero-contact {
-  background: url('images/contact-bg.jpg') center/cover no-repeat;
-  height: 650px;
-  width: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  color: white;
-}
+    .hero-contact::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      top: 0;
+      left: 0;
+    }
 
-.hero-contact::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  top: 0;
-  left: 0;
-}
+    .hero-contact h1 {
+      position: relative;
+      z-index: 2;
+      font-size: 38px;
+    }
 
-.hero-contact h1 {
-  position: relative;
-  z-index: 2;
-  font-size: 38px;
-}
+    /* ================= CONTACT SECTION ================= */
+    .contact-section {
+      padding: 60px 20px;
+    }
 
-/* ================= CONTACT SECTION ================= */
-.contact-section {
-  padding: 60px 20px;
-}
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      max-width: 1100px;
+      margin: auto;
+    }
 
-.contact-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-  gap: 40px;
-  max-width: 1100px;
-  margin: auto;
-}
+    /* CARD STYLE */
+    .contact-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
 
-/* CARD STYLE */
-.contact-card {
-  background: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
+    .contact-card h3 {
+      margin-bottom: 15px;
+      color: #d4a017;
+    }
 
-.contact-card h3 {
-  margin-bottom: 15px;
-  color: #d4a017;
-}
+    /* FORM STYLE */
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
 
-/* FORM STYLE */
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-}
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #d4a017;
+    }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: #d4a017;
-}
+    .contact-form button {
+      background: #d4a017;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 15px;
+      transition: 0.3s;
+    }
 
-.contact-form button {
-  background: #d4a017;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  width: 100%;
-  font-size: 15px;
-  transition: 0.3s;
-}
+    .contact-form button:hover {
+      background: #b89014;
+    }
 
-.contact-form button:hover {
-  background: #b89014;
-}
+    /* ================= MAP ================= */
+    .map-section {
+      margin-top: 50px;
+    }
 
-/* ================= MAP ================= */
-.map-section {
-  margin-top: 50px;
-}
+    .map-section iframe {
+      width: 100%;
+      height: 350px;
+      border: 0;
+    }
 
-.map-section iframe {
-  width: 100%;
-  height: 350px;
-  border: 0;
-}
-
-/* ================= RESPONSIVE ================= */
-@media(max-width:768px){
-  .hero-contact h1 {
-    font-size: 26px;
-    text-align: center;
-  }
-}
-
-</style>
+    /* ================= RESPONSIVE ================= */
+    @media(max-width:768px) {
+      .hero-contact h1 {
+        font-size: 26px;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ================= Header ================= -->
-<header class="header">
-  <nav class="navbar">
-    <div class="logo">
-      <img src="images/logo.png" alt="Gaytri Flour Mill Logo" style="height:50px;">
-      <span>Gaytri Flour Mill</span>
+  <!-- ================= Header ================= -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo">
+        <img src="images/logo.png" alt="Gaytri Flour Mill Logo" style="height:50px;">
+        <span>Gaytri Flour Mill</span>
+      </div>
+
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="infrastructure.html">Infrastructure</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero-contact">
+    <h1>Get In Touch With Us</h1>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="contact-section">
+
+    <div class="contact-container">
+
+      <!-- Contact Info -->
+      <div class="contact-card">
+        <h3>Contact Information</h3>
+        <p><strong>Company:</strong> Gaytri Flour Mill & Salt Suppliers</p>
+        <p><strong>Location:</strong> Limbdi, Gujarat, India</p>
+        <p><strong>Phone:</strong> +91 XXXXX XXXXX</p>
+        <p><strong>Email:</strong> info@gaytriflourmill.com</p>
+        <p><strong>Working Hours:</strong> Mon - Sat (9:00 AM - 7:00 PM)</p>
+        <br>
+        <p>We supply premium quality flour and industrial salt across Gujarat with trusted service and timely delivery.
+        </p>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-card contact-form">
+        <h3>Send Us a Message</h3>
+        <form id="contactForm">
+          <input type="text" id="name" placeholder="Your Name" required>
+          <input type="email" id="email" placeholder="Your Email" required>
+          <input type="tel" id="phone" placeholder="Phone Number">
+          <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+        <p id="formMessage"
+          style="margin-top: 15px; display: none; font-weight: bold; text-align: center; color: #333;"></p>
+      </div>
+
     </div>
 
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="products.html">Products</a></li>
-      <li><a href="infrastructure.html">Infrastructure</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
-<!-- ================= HERO ================= -->
-<section class="hero-contact">
-  <h1>Get In Touch With Us</h1>
-</section>
-
-<!-- ================= CONTACT ================= -->
-<section class="contact-section">
-
-  <div class="contact-container">
-
-    <!-- Contact Info -->
-    <div class="contact-card">
-      <h3>Contact Information</h3>
-      <p><strong>Company:</strong> Gaytri Flour Mill & Salt Suppliers</p>
-      <p><strong>Location:</strong> Limbdi, Gujarat, India</p>
-      <p><strong>Phone:</strong> +91 XXXXX XXXXX</p>
-      <p><strong>Email:</strong> info@gaytriflourmill.com</p>
-      <p><strong>Working Hours:</strong> Mon - Sat (9:00 AM - 7:00 PM)</p>
-      <br>
-      <p>We supply premium quality flour and industrial salt across Gujarat with trusted service and timely delivery.</p>
-    </div>
-
-    <!-- Contact Form -->
-    <div class="contact-card contact-form">
-      <h3>Send Us a Message</h3>
-      <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <input type="tel" placeholder="Phone Number">
-        <textarea rows="5" placeholder="Your Message"></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-
-  </div>
-
-  <!-- Google Map Section -->
-<section class="map-section">
-    <div class="container">
+    <!-- Google Map Section -->
+    <section class="map-section">
+      <div class="container">
         <h2>Our Location</h2>
         <div class="map-container">
-            <iframe 
-                src="https://www.google.com/maps?q=22.5647227,71.8058859&hl=en&z=18&output=embed"
-                width="100%" 
-                height="450" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+          <iframe src="https://www.google.com/maps?q=22.5647227,71.8058859&hl=en&z=18&output=embed" width="100%"
+            height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
         </div>
-    </div>
-</section>
-  
-</section>
+      </div>
+    </section>
 
-<!-- ================= Footer ================= -->
-<footer class="footer">
-  <div class="container footer-content">
-    <div class="footer-logo">
-      <img src="images/logo.png" alt="Gaytri Flour Mill Logo" style="height:50px;">
-      <h3>Gaytri Flour Mill</h3>
-    </div>
+  </section>
 
-    <div class="footer-info">
-      <p>Delivering Quality Flour & Salt with Trust and Purity</p>
-      <p>Limbdi, Gujarat, India</p>
-      <p>© 2026 Gaytri Flour Mill & Salt Suppliers. All Rights Reserved.</p>
+  <!-- ================= Footer ================= -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="Gaytri Flour Mill Logo" style="height:50px;">
+        <h3>Gaytri Flour Mill</h3>
+      </div>
+
+      <div class="footer-info">
+        <p>Delivering Quality Flour & Salt with Trust and Purity</p>
+        <p>Limbdi, Gujarat, India</p>
+        <p>© 2026 Gaytri Flour Mill & Salt Suppliers. All Rights Reserved.</p>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
+
+  <!-- Form Submission Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const contactForm = document.getElementById('contactForm');
+      if (contactForm) {
+        contactForm.addEventListener('submit', async function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const phone = document.getElementById('phone').value;
+          const message = document.getElementById('message').value;
+          const formMsg = document.getElementById('formMessage');
+
+          formMsg.style.display = 'block';
+          formMsg.style.color = '#333';
+          formMsg.innerText = 'Sending message...';
+
+          try {
+            const response = await fetch('/api/contact', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ name, email, phone, message })
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+              formMsg.style.color = 'green';
+              formMsg.innerText = result.message;
+              contactForm.reset();
+            } else {
+              formMsg.style.color = 'red';
+              formMsg.innerText = result.error || 'Something went wrong.';
+            }
+          } catch (error) {
+            formMsg.style.color = 'red';
+            formMsg.innerText = 'Error connecting to server. Please try again later.';
+          }
+        });
+      }
+    });
+  </script>
+
+  <script src="js/auth.js"></script>
+
+  <!-- Mobile Menu Toggle -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
+  </script>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/917016606014" target="_blank" class="whatsapp-float"
+    style="display:flex; align-items:center; justify-content:center;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+      <path
+        d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c-.003 1.396.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+    </svg>
+  </a>
 
 </body>
+
 </html>

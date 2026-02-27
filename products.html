@@ -1,305 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Products - Gaytri Flour Mill & Salt Suppliers</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - Gaytri Flour Mill & Salt Suppliers</title>
 
-<link rel="stylesheet" href="css/style.css">
-<script defer src="js/products.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/products.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-<style>
+  <style>
+    /* SAME STYLE AS INDEX PAGE */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
 
-/* SAME STYLE AS INDEX PAGE */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
-}
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      transition: 0.3s ease;
+    }
 
-.card {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 20px;
-  text-align: center;
-  transition: 0.3s ease;
-}
+    .card:hover {
+      transform: translateY(-6px);
+    }
 
-.card:hover {
-  transform: translateY(-6px);
-}
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
 
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-}
+    .card h3 {
+      margin: 10px 0 5px;
+    }
 
-.card h3 {
-  margin: 10px 0 5px;
-}
+    .card p {
+      font-weight: bold;
+      color: #d4a017;
+    }
 
-.card p {
-  font-weight: bold;
-  color: #d4a017;
-}
+    .card .qty-control {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 10px 0;
+    }
 
-.card input {
-  width: 60px;
-  padding: 5px;
-  margin: 8px 0;
-  text-align: center;
-}
+    .card .qty-btn {
+      background: #eee;
+      color: #333;
+      border: 1px solid #ccc;
+      padding: 5px 12px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: 0.2s;
+    }
 
-.card button {
-  background: #d4a017;
-  color: white;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 5px;
-  cursor: pointer;
-}
+    .card .qty-btn:hover {
+      background: #ddd;
+    }
 
-.card button:hover {
-  background: #b89014;
-}
+    .card .qty-control input {
+      width: 50px;
+      text-align: center;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-left: none;
+      border-right: none;
+      padding: 6px 0;
+      margin: 0;
+      border-radius: 0;
+      -moz-appearance: textfield;
+    }
 
-.section {
-  padding: 40px 20px;
-}
+    .card .qty-control input::-webkit-outer-spin-button,
+    .card .qty-control input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
 
-#cart-items div {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 8px;
-}
+    .card .add-cart-btn {
+      width: 100%;
+      background: #d4a017;
+      color: white;
+      border: none;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 5px;
+    }
 
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 12px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
+    .card .add-cart-btn:hover {
+      background: #b89014;
+    }
 
-button[type="submit"] {
-  background: green;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+    .section {
+      padding: 40px 20px;
+    }
 
-button[type="submit"]:hover {
-  background: darkgreen;
-}
+    #cart-items div {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
 
-</style>
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button[type="submit"] {
+      background: green;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background: darkgreen;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ================= Header ================= -->
-<header class="header">
-  <nav class="navbar">
-    
-    <div class="logo">
-      <img src="images/logo.png" alt="Gaytri Flour Mill Logo">
-      <span>Gaytri Flour Mill</span>
+  <!-- ================= Header ================= -->
+  <header class="header">
+    <nav class="navbar">
+
+      <div class="logo">
+        <img src="images/logo.png" alt="Gaytri Flour Mill Logo">
+        <span>Gaytri Flour Mill</span>
+      </div>
+
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="infrastructure.html">Infrastructure</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <section class="section">
+    <h2>Our Products</h2>
+
+    <div class="cards" id="dynamic-products-list">
+      <!-- Dynamic products will be rendered here by JS -->
     </div>
+  </section>
 
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <section class="section" style="background:#f9f9f9;">
+    <h2>Cart Summary</h2>
+    <div id="cart-items"></div>
+    <h3>Total: ₹ <span id="cart-total">0</span></h3>
+  </section>
 
-    <ul class="nav-links">
-      <li><a href="index.html" >Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="products.html" class="active">Products</a></li>
-      <li><a href="infrastructure.html">Infrastructure</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+  <section class="section">
+    <h2>Checkout</h2>
 
-  </nav>
-</header>
+    <form onsubmit="generateInvoice(event)">
+      <input type="text" id="customerName" placeholder="Customer Name" required>
+      <input type="text" id="customerPhone" placeholder="Phone Number" required>
+      <textarea id="customerAddress" placeholder="Delivery Address" required></textarea>
 
-<section class="section">
-<h2>Our Products</h2>
+      <h3>Payment Information</h3>
+      <p><strong>UPI:</strong> gaytriflour@upi</p>
+      <p><strong>Bank:</strong> State Bank of India</p>
 
-<div class="cards">
+      <button type="submit">Generate Invoice (PDF)</button>
+    </form>
 
-<!-- 1 -->
-<div class="card">
-<img src="images/atta.jpg">
-<h3>Wheat Flour (Atta)</h3>
-<p>₹40 / kg</p>
-<input type="number" id="q1" value="1" min="1">
-<button onclick="addToCart('Wheat Flour',40,'q1')">Add to Cart</button>
-</div>
+  </section>
 
-<!-- 2 -->
-<div class="card">
-<img src="images/maida.jpg">
-<h3>Maida</h3>
-<p>₹38 / kg</p>
-<input type="number" id="q2" value="1" min="1">
-<button onclick="addToCart('Maida',38,'q2')">Add to Cart</button>
-</div>
+  <!-- ================= Footer ================= -->
+  <footer class="footer">
+    <div class="container footer-content">
 
-<!-- 3 -->
-<div class="card">
-<img src="images/suji.jpg">
-<h3>Suji / Rava</h3>
-<p>₹42 / kg</p>
-<input type="number" id="q3" value="1" min="1">
-<button onclick="addToCart('Suji',42,'q3')">Add to Cart</button>
-</div>
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="Gaytri Flour Mill Logo">
+        <h3>Gaytri Flour Mill</h3>
+      </div>
 
-<!-- 4 -->
-<div class="card">
-<img src="images/salt.jpg">
-<h3>Industrial Salt</h3>
-<p>₹15 / kg</p>
-<input type="number" id="q4" value="1" min="1">
-<button onclick="addToCart('Industrial Salt',15,'q4')">Add to Cart</button>
-</div>
+      <div class="footer-info">
+        <p>Delivering Quality Flour & Salt with Trust and Purity</p>
+        <p>Limbdi, Gujarat, India</p>
+        <p>© 2026 Gaytri Flour Mill & Salt Suppliers. All Rights Reserved.</p>
+      </div>
 
-<!-- 5 -->
-<div class="card">
-<img src="images/multigrainflour.jpg">
-<h3>Multigrain Flour</h3>
-<p>₹55 / kg</p>
-<input type="number" id="q5" value="1" min="1">
-<button onclick="addToCart('Multigrain Flour',55,'q5')">Add to Cart</button>
-</div>
-
-<!-- 6 -->
-<div class="card">
-<img src="images/besan.jpg">
-<h3>Besan (Gram Flour)</h3>
-<p>₹60 / kg</p>
-<input type="number" id="q6" value="1" min="1">
-<button onclick="addToCart('Besan',60,'q6')">Add to Cart</button>
-</div>
-
-<!-- 7 -->
-<div class="card">
-<img src="images/jower.jpg">
-<h3>Jowar Flour</h3>
-<p>₹50 / kg</p>
-<input type="number" id="q7" value="1" min="1">
-<button onclick="addToCart('Jowar Flour',50,'q7')">Add to Cart</button>
-</div>
-
-<!-- 8 -->
-<div class="card">
-<img src="images/bajara.jpg">
-<h3>Bajra Flour</h3>
-<p>₹48 / kg</p>
-<input type="number" id="q8" value="1" min="1">
-<button onclick="addToCart('Bajra Flour',48,'q8')">Add to Cart</button>
-</div>
-
-<!-- 9 -->
-<div class="card">
-<img src="images/corn.jpg">
-<h3>Corn Flour</h3>
-<p>₹45 / kg</p>
-<input type="number" id="q9" value="1" min="1">
-<button onclick="addToCart('Corn Flour',45,'q9')">Add to Cart</button>
-</div>
-
-  <!-- 10 -->
-<div class="card">
-<img src="images/blacksalt.jpg">
-<h3>Black Salt</h3>
-<p>₹60 / kg</p>
-<input type="number" id="q8" value="1" min="1">
-<button onclick="addToCart('Black Salt',60,'q8')">Add to Cart</button>
-</div>
-
-  <!-- 11 -->
-<div class="card">
-<img src="images/gaytrisalt.jpg">
-<h3>Gaytri Salt</h3>
-<p>₹35 / kg</p>
-<input type="number" id="q8" value="1" min="1">
-<button onclick="addToCart('Gaytri Salt',35,'q8')">Add to Cart</button>
-</div>
-
-  <!-- 12 -->
-<div class="card">
-<img src="images/rocksalt.jpg">
-<h3>Rock Salt</h3>
-<p>₹25 / kg</p>
-<input type="number" id="q8" value="1" min="1">
-<button onclick="addToCart('Rock Salt',25,'q8')">Add to Cart</button>
-</div>
-
-<!-- 13 -->
-<div class="card">
-<img src="images/saltlite.jpg">
-<h3>Salt Lite</h3>
-<p>₹20 / kg</p>
-<input type="number" id="q8" value="1" min="1">
-<button onclick="addToCart('Salt Lite',20,'q8')">Add to Cart</button>
-</div>
-
-<!-- 14 -->
-<div class="card">
-<img src="images/superlitewhite.jpg">
-<h3>Super Lite White Salt</h3>
-<p>₹65 / kg</p>
-<input type="number" id="q8" value="1" min="1">
-<button onclick="addToCart('Super Lite White Salt',65,'q8')">Add to Cart</button>
-</div>
-  
-</div>
-</section>
-
-<section class="section" style="background:#f9f9f9;">
-<h2>Cart Summary</h2>
-<div id="cart-items"></div>
-<h3>Total: ₹ <span id="cart-total">0</span></h3>
-</section>
-
-<section class="section">
-<h2>Checkout</h2>
-
-<form onsubmit="generateInvoice(event)">
-<input type="text" id="customerName" placeholder="Customer Name" required>
-<input type="text" id="customerPhone" placeholder="Phone Number" required>
-<textarea id="customerAddress" placeholder="Delivery Address" required></textarea>
-
-<h3>Payment Information</h3>
-<p><strong>UPI:</strong> gaytriflour@upi</p>
-<p><strong>Bank:</strong> State Bank of India</p>
-
-<button type="submit">Generate Invoice (PDF)</button>
-</form>
-
-</section>
-
-<!-- ================= Footer ================= -->
-<footer class="footer">
-  <div class="container footer-content">
-
-    <div class="footer-logo">
-      <img src="images/logo.png" alt="Gaytri Flour Mill Logo">
-      <h3>Gaytri Flour Mill</h3>
     </div>
+  </footer>
 
-    <div class="footer-info">
-      <p>Delivering Quality Flour & Salt with Trust and Purity</p>
-      <p>Limbdi, Gujarat, India</p>
-      <p>© 2026 Gaytri Flour Mill & Salt Suppliers. All Rights Reserved.</p>
-    </div>
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/917016606014" target="_blank" class="whatsapp-float"
+    style="display:flex; align-items:center; justify-content:center;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+      <path
+        d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c-.003 1.396.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+    </svg>
+  </a>
 
-  </div>
-</footer>
+  <script src="js/auth.js"></script>
+  <!-- Custom JS -->
+  <script src="js/products.js"></script>
 
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
+  </script>
 </body>
+
 </html>

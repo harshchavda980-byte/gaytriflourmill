@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Gaytri Flour Mill</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .auth-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            background-color: #f1f3f6;
+            padding: 20px;
+        }
+
+        .auth-box {
+            background: white;
+            display: flex;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .08);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .auth-banner {
+            background-color: #8B0000;
+            color: white;
+            padding: 40px;
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .auth-banner h2 {
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .auth-banner p {
+            font-size: 16px;
+            opacity: 0.9;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        .auth-form-container {
+            padding: 40px 50px;
+            width: 60%;
+        }
+
+        .auth-form-container h3 {
+            font-size: 22px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            border: none;
+            border-bottom: 1px solid #e0e0e0;
+            outline: none;
+            background: transparent;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus {
+            border-bottom-color: #8B0000;
+        }
+
+        .form-group label {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            color: #878787;
+            font-size: 16px;
+            pointer-events: none;
+            transition: 0.2s ease all;
+        }
+
+        .form-group input:focus~label,
+        .form-group input:valid~label {
+            top: -15px;
+            font-size: 12px;
+            color: #8B0000;
+        }
+
+        .auth-btn {
+            width: 100%;
+            background: #FFD700;
+            color: #000;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 2px;
+            cursor: pointer;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+
+        .auth-btn:hover {
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+        }
+
+        .auth-link {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            color: #8B0000;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .auth-link:hover {
+            text-decoration: underline;
+        }
+
+        .error-message,
+        .success-message {
+            font-size: 13px;
+            margin-bottom: 15px;
+            display: none;
+        }
+
+        .error-message {
+            color: #d32f2f;
+        }
+
+        .success-message {
+            color: #2e7d32;
+        }
+
+        @media (max-width: 768px) {
+            .auth-box {
+                flex-direction: column;
+            }
+
+            .auth-banner {
+                width: 100%;
+                padding: 30px;
+            }
+
+            .auth-form-container {
+                width: 100%;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/80x45?text=Logo'">
+                Gaytri Flour Mill
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="auth-banner">
+                <h2>Looks like you're new here!</h2>
+                <p>Sign up with your details to get started</p>
+            </div>
+            <div class="auth-form-container">
+                <h3>Create Account</h3>
+                <div id="registerMsg" class="error-message"></div>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <input type="text" id="name" required>
+                        <label>Full Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required>
+                        <label>Email Address</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" required>
+                        <label>Password</label>
+                    </div>
+                    <button type="submit" class="auth-btn">Continue</button>
+                    <a href="login.html" class="auth-link">Existing User? Log in</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Gaytri Flour Mill. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const msgDiv = document.getElementById('registerMsg');
+
+            try {
+                const response = await fetch('/api/auth/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, password })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    msgDiv.className = 'success-message';
+                    msgDiv.innerText = 'Registration successful! Redirecting to login...';
+                    msgDiv.style.display = 'block';
+                    setTimeout(() => {
+                        window.location.href = 'login.html';
+                    }, 2000);
+                } else {
+                    msgDiv.className = 'error-message';
+                    msgDiv.innerText = data.error || 'Registration failed';
+                    msgDiv.style.display = 'block';
+                }
+            } catch (err) {
+                msgDiv.className = 'error-message';
+                msgDiv.innerText = 'Server error connecting to registration. Please try again.';
+                msgDiv.style.display = 'block';
+                console.error(err);
+            }
+        });
+    </script>
+
+    <script src="js/auth.js"></script>
+
+    <!-- Mobile Menu Toggle -->
+    <script>
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("show");
+        }
+    </script>
+</body>
+
+</html>

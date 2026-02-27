@@ -48,7 +48,9 @@ body {
 }
 
 @keyframes spin {
-    100% { transform: rotate(360deg); }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* ===============================
@@ -116,8 +118,8 @@ body {
 ================================= */
 .hero {
     height: 85vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                url('../images/flour-bg.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('../images/flour-bg.jpg') center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -206,7 +208,7 @@ body {
     background: #fff;
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
     transition: all 0.4s ease;
     text-align: center;
     position: relative;
@@ -215,7 +217,7 @@ body {
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
 }
 
 /* ===============================
@@ -270,15 +272,15 @@ body {
 }
 
 .whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  padding: 12px 15px;
-  border-radius: 50%;
-  font-size: 20px;
-  text-decoration: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 12px 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-decoration: none;
 }
 
 /* Map Section */
@@ -300,7 +302,7 @@ body {
     margin: 0 auto;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 /* ===============================
@@ -315,7 +317,7 @@ body {
 
 .footer-logo img {
     height: 50px;
-   width: auto;
+    width: auto;
     margin-bottom: 10px;
 }
 
@@ -331,7 +333,7 @@ body {
     .nav-links {
         position: absolute;
         top: 70px;
-        right: -100%;
+        right: 0%;
         flex-direction: column;
         background: #8B0000;
         width: 200px;
@@ -359,6 +361,7 @@ body {
         height: 180px;
     }
 }
+
 @media (max-width: 768px) {
     .logo img {
         height: 40px;
@@ -368,4 +371,3 @@ body {
         height: 45px;
     }
 }
-

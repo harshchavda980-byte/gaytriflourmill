@@ -1,0 +1,31 @@
+{
+  "name": "gaytriflourmill",
+  "version": "1.0.0",
+  "description": "Dark Royal Blue + Cyber Glow (balanced modern)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harshchavda980-byte/gaytriflourmill.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/harshchavda980-byte/gaytriflourmill/issues"
+  },
+  "homepage": "https://github.com/harshchavda980-byte/gaytriflourmill#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.0.2",
+    "mysql2": "^3.18.2",
+    "nodemailer": "^8.0.1"
+  }
+}
